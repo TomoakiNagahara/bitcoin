@@ -10,9 +10,13 @@
 
 #include <assert.h>
 
-const std::string CBaseChainParams::MAIN = "main";
+const std::string CBaseChainParams::MAIN    = "main";
 const std::string CBaseChainParams::TESTNET = "test";
 const std::string CBaseChainParams::REGTEST = "regtest";
+
+const std::int32_t CBaseChainParams::PORT_MAIN    =  8332;
+const std::int32_t CBaseChainParams::PORT_TESTNET = 18332;
+const std::int32_t CBaseChainParams::PORT_REGTEST = 18443;
 
 void AppendParamsHelpMessages(std::string& strUsage, bool debugHelp)
 {
@@ -35,11 +39,11 @@ const CBaseChainParams& BaseParams()
 std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const std::string& chain)
 {
     if (chain == CBaseChainParams::MAIN)
-        return MakeUnique<CBaseChainParams>("", 8332);
+        return MakeUnique<CBaseChainParams>("", CBaseChainParams::PORT_MAIN);
     else if (chain == CBaseChainParams::TESTNET)
-        return MakeUnique<CBaseChainParams>("testnet3", 18332);
+        return MakeUnique<CBaseChainParams>("testnet3", CBaseChainParams::PORT_TESTNET);
     else if (chain == CBaseChainParams::REGTEST)
-        return MakeUnique<CBaseChainParams>("regtest", 18443);
+        return MakeUnique<CBaseChainParams>("regtest", CBaseChainParams::PORT_REGTEST);
     else
         throw std::runtime_error(strprintf("%s: Unknown chain %s.", __func__, chain));
 }

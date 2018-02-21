@@ -21,6 +21,10 @@ public:
     static const std::string TESTNET;
     static const std::string REGTEST;
 
+    static const std::int32_t PORT_MAIN;
+    static const std::int32_t PORT_TESTNET;
+    static const std::int32_t PORT_REGTEST;
+
     const std::string& DataDir() const { return strDataDir; }
     int RPCPort() const { return nRPCPort; }
 
