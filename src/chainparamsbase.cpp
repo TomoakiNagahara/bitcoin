@@ -14,9 +14,9 @@ const std::string CBaseChainParams::MAIN    = "main";
 const std::string CBaseChainParams::TESTNET = "test";
 const std::string CBaseChainParams::REGTEST = "regtest";
 
-const std::int32_t CBaseChainParams::PORT_MAIN    =  8332;
-const std::int32_t CBaseChainParams::PORT_TESTNET = 18332;
-const std::int32_t CBaseChainParams::PORT_REGTEST = 18443;
+const std::int32_t CBaseChainParams::PORT_MAIN    =  9001;
+const std::int32_t CBaseChainParams::PORT_TESTNET = 19002;
+const std::int32_t CBaseChainParams::PORT_REGTEST = 19003;
 
 void AppendParamsHelpMessages(std::string& strUsage, bool debugHelp)
 {
